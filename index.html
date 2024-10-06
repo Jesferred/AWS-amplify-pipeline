@@ -4,30 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Форма реєстрації</title>
+    <title>Користувачі</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <div class="container">
-        <h1>Реєстрація</h1>
-        <form id="registrationForm">
-            <label for="firstName">Ім'я:</label>
-            <input type="text" id="firstName" name="firstName" required>
+    <header>
+        <h1>Список користувачів</h1>
+        <nav>
+            <a href="#" id="viewUsers">Перегляд користувачів</a>
+            <a href="#" id="addUser">Додавання користувача</a>
+        </nav>
+    </header>
 
-            <label for="lastName">Прізвище:</label>
-            <input type="text" id="lastName" name="lastName" required>
+    <main>
+        <!-- Список користувачів -->
+        <section id="userList">
+            <h2>Користувачі</h2>
+            <input type="text" id="filterEmail" placeholder="Фільтр за email">
+            <button id="sortByName">Сортувати за іменем</button>
+            <ul id="users"></ul>
+        </section>
 
-            <label for="email">Електронна пошта:</label>
-            <input type="email" id="email" name="email" required>
+        <!-- Форма для додавання користувачів -->
+        <section id="addUserForm" style="display:none;">
+            <h2>Додати користувача</h2>
+            <form id="userForm">
+                <input type="text" id="userName" placeholder="Ім'я" required>
+                <input type="email" id="userEmail" placeholder="Email" required>
+                <button type="submit">Додати</button>
+            </form>
+        </section>
+    </main>
 
-            <label for="password">Пароль:</label>
-            <input type="password" id="password" name="password" required>
-
-            <button type="submit">Відправити</button>
-        </form>
-    </div>
-    <script src="script.js"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>
