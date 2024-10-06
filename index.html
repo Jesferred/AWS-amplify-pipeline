@@ -4,37 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Користувачі</title>
+    <title>Жарти</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <header>
-        <h1>Список користувачів</h1>
-        <nav>
-            <a href="#" id="viewUsers">Перегляд користувачів</a>
-            <a href="#" id="addUser">Додавання користувача</a>
-        </nav>
+        <h1>Отримати випадковий жарт</h1>
     </header>
 
     <main>
-        <!-- Список користувачів -->
-        <section id="userList">
-            <h2>Користувачі</h2>
-            <input type="text" id="filterEmail" placeholder="Фільтр за email">
-            <button id="sortByName">Сортувати за іменем</button>
-            <ul id="users"></ul>
-        </section>
-
-        <!-- Форма для додавання користувачів -->
-        <section id="addUserForm" style="display:none;">
-            <h2>Додати користувача</h2>
-            <form id="userForm">
-                <input type="text" id="userName" placeholder="Ім'я" required>
-                <input type="email" id="userEmail" placeholder="Email" required>
-                <button type="submit">Додати</button>
-            </form>
-        </section>
+        <button id="getJoke">Показати жарт</button>
+        <p id="jokeDisplay"></p>
     </main>
 
     <script src="app.js"></script>
