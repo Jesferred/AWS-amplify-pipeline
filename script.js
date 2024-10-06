@@ -28,7 +28,7 @@ function displayUsers(users) {
 // Фільтрація користувачів за email
 filterEmailInput.addEventListener('input', () => {
     const filterValue = filterEmailInput.value.toLowerCase();
-    fetch('https://jsonplaceholder.typicode.com/users')
+    fetch('https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit')
         .then(response => response.json())
         .then(data => {
             const filteredUsers = data.filter(user => user.email.toLowerCase().includes(filterValue));
@@ -38,7 +38,7 @@ filterEmailInput.addEventListener('input', () => {
 
 // Сортування користувачів за іменем
 sortByNameBtn.addEventListener('click', () => {
-    fetch('https://jsonplaceholder.typicode.com/users')
+    fetch('https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit')
         .then(response => response.json())
         .then(data => {
             const sortedUsers = data.sort((a, b) => a.name.localeCompare(b.name));
@@ -58,7 +58,7 @@ userForm.addEventListener('submit', (e) => {
     const userName = document.getElementById('userName').value;
     const userEmail = document.getElementById('userEmail').value;
 
-    fetch('https://jsonplaceholder.typicode.com/users', {
+    fetch('https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit', {
         method: 'POST',
         body: JSON.stringify({
             name: userName,
